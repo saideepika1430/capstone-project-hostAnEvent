@@ -2,14 +2,12 @@
 
 ## About
 
-This is a demo project for practicing Spring + Thymeleaf. The idea was to build some basic shopping cart web app for hosting an event.
-
-It was made using **Spring Boot**, **Spring Security**, **Thymeleaf**, **Spring Data JPA**, **Spring Data REST and Docker**. 
+The Project was made using **Spring Boot**, **Spring Security**, **Thymeleaf**, **Spring Data JPA**, **Spring Data REST and Docker**. 
 Database is in memory **H2**.
 
 There is a login and registration functionality included.
 
-Users can shop for products. Each user has his own host an event shopping cart (session functionality).
+Users can look for event organizers or plan an event based on the local availability of the performing artists , clicking on the 'Favorite' Button will make the user access the favorites in their registry once they Sign-Up or Log-In . Each user has his own host an event shopping cart (session functionality).
 Checkout is transactional.
 
 ## Configuration

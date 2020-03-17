@@ -21,6 +21,7 @@ public class Product {
     private String name;
 
     @Column(name = "description")
+    @Length(max = 5000)
     private String description;
 
     @Column(name = "contact", nullable = false)
