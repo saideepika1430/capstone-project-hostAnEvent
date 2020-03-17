@@ -23,13 +23,15 @@ public class Product {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "contact", nullable = false)
+    private String contact;
+
+    @Column(name = "location", nullable = false)
+    private String location;
+
     @Column(name = "quantity", nullable = false)
     @Min(value = 0, message = "*Quantity has to be non negative number")
     private Integer quantity;
-
-    @Column(name = "price", nullable = false)
-    @DecimalMin(value = "0.00", message = "*Price has to be non negative number")
-    private BigDecimal price;
 
     public Long getId() {
         return id;
@@ -55,20 +57,28 @@ public class Product {
         this.description = description;
     }
 
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public Integer getQuantity() {
         return quantity;
     }
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal unitPrice) {
-        this.price = unitPrice;
     }
 
     @Override

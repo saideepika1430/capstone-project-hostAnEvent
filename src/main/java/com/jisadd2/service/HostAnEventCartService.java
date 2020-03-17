@@ -3,7 +3,6 @@ package com.jisadd2.service;
 import com.jisadd2.exception.NotEnoughProductsInStockException;
 import com.jisadd2.model.Product;
 
-import java.math.BigDecimal;
 import java.util.Map;
 
 public interface HostAnEventCartService {
@@ -14,7 +13,6 @@ public interface HostAnEventCartService {
 
     Map<Product, Integer> getProductsInCart();
 
-    void checkout() throws NotEnoughProductsInStockException;
+    void registry() throws NotEnoughProductsInStockException;
 
-    BigDecimal getTotal();
 }

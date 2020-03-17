@@ -79,7 +79,7 @@ public class HostAnEventCartServiceImpl implements HostAnEventCartService {
      * @throws NotEnoughProductsInStockException
      */
     @Override
-    public void checkout() throws NotEnoughProductsInStockException {
+    public void registry() throws NotEnoughProductsInStockException {
         Product product;
         for (Map.Entry<Product, Integer> entry : products.entrySet()) {
             // Refresh quantity for every product before checking
@@ -93,11 +93,4 @@ public class HostAnEventCartServiceImpl implements HostAnEventCartService {
         products.clear();
     }
 
-    @Override
-    public BigDecimal getTotal() {
-        return products.entrySet().stream()
-                .map(entry -> entry.getKey().getPrice().multiply(BigDecimal.valueOf(entry.getValue())))
-                .reduce(BigDecimal::add)
-                .orElse(BigDecimal.ZERO);
-    }
 }

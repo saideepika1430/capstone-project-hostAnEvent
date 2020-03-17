@@ -26,7 +26,6 @@ public class HostAnEventCartController {
     public ModelAndView hostAnEventCart() {
         ModelAndView modelAndView = new ModelAndView("/hostAnEventCart");
         modelAndView.addObject("products", hostAnEventCartService.getProductsInCart());
-        modelAndView.addObject("total", hostAnEventCartService.getTotal().toString());
         return modelAndView;
     }
 
@@ -45,7 +44,7 @@ public class HostAnEventCartController {
     @GetMapping("/hostAnEventCart/checkout")
     public ModelAndView checkout() {
         try {
-            hostAnEventCartService.checkout();
+            hostAnEventCartService.registry();
         } catch (NotEnoughProductsInStockException e) {
             return hostAnEventCart().addObject("outOfStockMessage", e.getMessage());
         }
